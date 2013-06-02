@@ -1,15 +1,14 @@
 {
-    "name": "zf2/application-blanche",
+    "name": "application-blanche",
     "description": "Application blanche pour ZF2",
     "license": "BSD-3-Clause",
     "keywords": [
         "framework",
         "zf2"
     ],
-    "homepage": "http://zf2.application-blanche.debian.local.prv",
+    "homepage": "http://appblanche.local",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
-        "doctrine/orm": "2.3"
+        "zendframework/zendframework": "2.*"
     }
 }
