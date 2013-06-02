@@ -1,0 +1,16 @@
+Alias /appblanche /home/www/application-blanche/public
+
+<Directory /home/www/application-blanche/public>
+	Order deny,allow
+	Allow from all
+	
+	AllowOverride None
+	
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} -s [OR]
+	RewriteCond %{REQUEST_FILENAME} -l [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteBase /appblanche
+	RewriteRule ^.*$ - [NC,L]
+	RewriteRule !\.(js|ico|txt|gif|jpg|png|css)$ index.php [NC,L]
+</Directory>

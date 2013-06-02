@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+	ServerName appblanche.local
+	DocumentRoot /home/www/application-blanche/public
+	
+	SetEnv APPLICATION_ENV "development"
+	
+	<Directory /home/www/application-blanche/public>
+		Order deny,allow
+		Allow from all
+		AllowOverride None
+	</Directory>
+
+	RewriteEngine On
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} -s [OR]
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} -l [OR]
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} -d
+	RewriteRule ^.*$ - [NC,L]
+	RewriteRule ^.*$ /index.php [NC,L]
+</VirtualHost>
