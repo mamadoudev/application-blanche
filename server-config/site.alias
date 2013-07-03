@@ -1,6 +1,6 @@
-Alias /appblanche /home/www/application-blanche/public
+Alias /galerie /home/www/galerie/public
 
-<Directory /home/www/application-blanche/public>
+<Directory /home/www/galerie/public>
 	Order deny,allow
 	Allow from all
 	
