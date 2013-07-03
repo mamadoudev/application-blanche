@@ -1,0 +1,4 @@
+namespace Galerie;
+
+class Module {
+}
