@@ -9,7 +9,7 @@ class Module implements AutoloaderProviderInterface
 	{
 		return array(
 				'Zend\Loader\ClassMapAutoloader' => array(
-					__DIR__ . '/src/' . '/autoload_classmap.php',
+					__DIR__ . '/config' . '/autoload_classmap.php',
 				),
 				'Zend\Loader\StandardAutoloader' => array(
 					'namespace' => array(
