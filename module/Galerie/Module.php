@@ -3,8 +3,12 @@ namespace Galerie;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 
-class Module implements AutoloaderProviderInterface, ConfigProviderInterface
+use Zend\EventManager\EventInterface;
+use Zend\Mvc\ModuleRouteListener;
+
+class Module implements AutoloaderProviderInterface, ConfigProviderInterface, BootstrapListenerInterface
 {
 	public function getAutoloaderConfig()
 	{
@@ -23,5 +27,10 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
 	public function getConfig()
 	{
 		return include __DIR__ .'/config' . '/module.config.php';
+	}
+	
+	public function onBootstrap(EventInterface $e)
+	{
+		$translator = $e->getApplication()->getServiceManager()->get('translator');
 	}
 }
