@@ -34,57 +34,58 @@ return array(
 								),
 							'verb' => 'get',
 							'may_terminate' => true,
-							),
-						'add' => array(
-							'type'	=>	'Literal',
-							'options'=>	array(
-								'route' => '/ajouter',
-								'defaults' => array(
-									'action' => 'edit',
+							'child_routes' => array(
+								'add' => array(
+									'type'	=>	'Literal',
+									'options'=>	array(
+										'route' => '/ajouter',
+										'defaults' => array(
+											'action' => 'edit',
+											),
+										),
+									'verb' => 'get,post',
+									),
+								'edit' => array(
+									'type'	=>	'Segment',
+									'options'=>	array(
+										'route' => '/editer/:id',
+										'constraints' => array(
+											'id' => '[1-9][0-9]*',
+											),
+										'defaults' => array(
+											'action' => 'edit',
+											),
+										),
+									'verb' => 'get,post',
+									),
+								'del' => array(
+									'type'	=>	'Segment',
+									'options'=>	array(
+										'route' => '/supprimer/:id',
+										'constraints' => array(
+											'id' => '[1-9][0-9]*',
+											),
+										'defaults' => array(
+											'action' => 'del',
+											),
+										),
+									'verb' => 'get,post',
+									),
+								'view' => array(
+									'type'	=>	'Segment',
+									'options'=>	array(
+										'route' => '/voir/:id',
+										'constraints' => array(
+											'id' => '[1-9][0-9]*',
+											),
+										'defaults' => array(
+											'action' => 'view',
+											),
+										),
+									'verb' => 'get,post',
 									),
 								),
-							'verb' => 'get,post',
-							),
-						'edit' => array(
-							'type'	=>	'Segment',
-							'options'=>	array(
-								'route' => '/editer/:id',
-								'constraints' => array(
-									'id' => '[1-9][0-9]*',
-									),
-								'defaults' => array(
-									'action' => 'edit',
-									),
-								),
-							'verb' => 'get,post',
-							),
-						'del' => array(
-							'type'	=>	'Segment',
-							'options'=>	array(
-								'route' => '/supprimer/:id',
-								'constraints' => array(
-									'id' => '[1-9][0-9]*',
-									),
-								'defaults' => array(
-									'action' => 'del',
-									),
-								),
-							'verb' => 'get,post',
-							),
-						'view' => array(
-							'type'	=>	'Segment',
-							'options'=>	array(
-								'route' => '/voir/:id',
-								'constraints' => array(
-									'id' => '[1-9][0-9]*',
-									),
-								'defaults' => array(
-									'action' => 'view',
-									),
-								),
-							'verb' => 'get,post',
-							),
-
+						),
 
 					),
 		),
