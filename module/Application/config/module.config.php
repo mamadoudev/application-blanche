@@ -61,12 +61,12 @@ return array(
             'translator' => 'MvcTranslator',
         ),
     ),
-    'translator' => array(
-        'locale' => 'en_US',
+   'translator' => array(
+        'locale' => 'fr_FR',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
-                'base_dir' => __DIR__ . '/../language',
+                'base_dir' => realpath(__DIR__ . '/../language'),
                 'pattern'  => '%s.mo',
             ),
         ),
