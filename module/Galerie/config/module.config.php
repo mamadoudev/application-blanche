@@ -92,7 +92,7 @@ return array(
 			
 		'service_manager' => array(
 	        'factories' => array(
-	            	'MvcTranslator' => 'Zend\I18n\Translator\TranslatorServiceFactory',				
+	            	'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',				
 				),
 			),
 		
