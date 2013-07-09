@@ -10,6 +10,8 @@ use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\ModuleRouteListener;
 
+
+
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface, BootstrapListenerInterface, ViewHelperProviderInterface
 {
 	public function getAutoloaderConfig()
@@ -38,8 +40,10 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface, Bo
 	
 	public function getServiceConfig()
 	{
+		
 		return array(
 			'factories' => array(
+				
 			),
 		);
 	}

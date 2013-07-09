@@ -1,4 +1,8 @@
 <?php
+use Zend\Log\Logger;
+use Zend\Log\Writer\FirePhp;
+require_once '/usr/share/php/FirePHPCore/FirePHP.class.php';
+
 return array(
 		'controllers' => array(
 				'invokables' => array(
@@ -92,7 +96,16 @@ return array(
 			
 		'service_manager' => array(
 	        'factories' => array(
-	            	'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',				
+	            	'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+					'Zend\Log\Logger' => function($sm) {
+						$myLogger = new Logger;
+						$myWriter = new FirePhp();
+						$myLogger->addWriter($myWriter);
+						return $myLogger;
+						},
+				),
+			'aliases' => array(
+					'myLog' => 'Zend\Log\Logger',
 				),
 			),
 		
