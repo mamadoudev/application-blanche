@@ -1,10 +1,15 @@
 <?php
+$env = getenv('APPLICATION_ENV') ?: 'production';
+$modules = array(
+    'Application',
+	'Galerie',
+);
+if ($env == 'development') {
+    $modules[] = 'ZendDeveloperTools';
+}
 return array(
     // This should be an array of module namespaces used in the application.
-    'modules' => array(
-        'Application',
-		'Galerie',
-    ),
+    'modules' => $modules,
 
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
