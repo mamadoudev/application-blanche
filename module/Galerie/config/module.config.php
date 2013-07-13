@@ -1,7 +1,6 @@
 <?php
 use Zend\Log\Logger;
 use Zend\Log\Writer\FirePhp;
-require_once '/usr/share/php/FirePHPCore/FirePHP.class.php';
 
 return array(
 		'controllers' => array(
