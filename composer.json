@@ -9,7 +9,8 @@
     "homepage": "http://zf2.application-blanche.debian.local.prv",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
-        "doctrine/orm": "2.3"
+        "zendframework/zendframework": "2.2.0",
+        "doctrine/orm": "2.3",
+        "firephp/firephp-core": "*"
     }
 }

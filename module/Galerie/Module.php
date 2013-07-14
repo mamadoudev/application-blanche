@@ -35,7 +35,8 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface, Bo
 	
 	public function onBootstrap(EventInterface $e)
 	{
-		$translator = $e->getApplication()->getServiceManager()->get('translator');
+	    $e->getApplication()->getServiceManager()->get('translator');
+	     
 	}
 	
 	public function getServiceConfig()

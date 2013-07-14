@@ -1,6 +1,4 @@
 <?php
-use Zend\Log\Logger;
-use Zend\Log\Writer\FirePhp;
 
 return array(
 		'controllers' => array(
@@ -92,24 +90,16 @@ return array(
 
 					),
 				),
-			
-		'service_manager' => array(
-	        'factories' => array(
-	            	'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
-					'Zend\Log\Logger' => function($sm) {
-						$myLogger = new Logger;
-						$myWriter = new FirePhp();
-						$myLogger->addWriter($myWriter);
-						return $myLogger;
-						},
-				),
-			'aliases' => array(
-					'myLog' => 'Zend\Log\Logger',
-				),
-			),
-		
+        'service_manager' => array(
+            'factories' => array(
+                 'MvcTranslator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+                ),
+            'aliases' => array(
+                    'translator' => 'MvcTranslator',
+            ),
+        ),
 		'translator' => array(
-				'locale' => 'fr_FR',
+		        'locale' => 'fr_FR',
 				'translation_file_patterns' => array(
 					array(
 							'type'	=> 'gettext',
@@ -124,5 +114,5 @@ return array(
 				                'text_domain'  => 'galerie', 
 							),**/
 					),
-			),
+			     ),
 );

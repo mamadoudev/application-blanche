@@ -16,7 +16,7 @@ class Module
 {
     public function onBootstrap(MvcEvent $e)
     {
-    	$translator = $e->getApplication()->getServiceManager()->get('translator');
+        $e->getApplication()->getServiceManager()->get('translator');
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);

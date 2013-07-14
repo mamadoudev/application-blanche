@@ -57,18 +57,11 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
-       'factories' => array(
-	        'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',				
+        'factories' => array( 
+            'MvcTranslator' => 'Zend\I18n\Translator\TranslatorServiceFactory', 
         ),
-    ),
-   'translator' => array(
-        'locale' => 'fr_FR',
-        'translation_file_patterns' => array(
-            array(
-                'type'     => 'gettext',
-                'base_dir' => realpath(__DIR__ . '/../language'),
-                'pattern'  => '%s.mo',
-            ),
+        'aliases' => array(
+            'translator' => 'MvcTranslator',
         ),
     ),
     'controllers' => array(
@@ -92,4 +85,24 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+    'log' => array(
+    	'\Log' => array(
+    	   'writers' => array(
+    	       array(
+    	       	   'name' => 'firephp',
+    	       ),
+            ),
+        ),
+    ),
+    'translator' => array(
+            'locale' => 'fr_FR',
+            'translation_file_patterns' => array(
+                    array(
+                            'type'     => 'gettext',
+                            'base_dir' => realpath(__DIR__ . '/../language'),
+                            'pattern'  => '%s.mo',
+                    ),
+            ),
+         ),
+
 );
